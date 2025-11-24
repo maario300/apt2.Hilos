@@ -1,15 +1,29 @@
 public class Balsa {
 
+    private String nombre;
     private int capacidad;
-    private int tiempo;
+    private double tiempoSegundos;
 
-    public Balsa(int capacidad, int tiempo) {
+    public Balsa(String nombre, int capacidad, double tiempoSegundos) {
+        this.nombre = nombre;
         this.capacidad = capacidad;
-        this.tiempo = tiempo;
+        this.tiempoSegundos = tiempoSegundos;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public int getCapacidad() {
         return capacidad;
     }
 
+    public double getTiempoSegundos() {
+        return tiempoSegundos;
+    }
+
+    @Override
+    public String toString() {
+        return "Balsa{ nombre='" + nombre + '\'' +", capacidad=" + capacidad +", tiempoSegundos=" + tiempoSegundos ;
+    }
 }
