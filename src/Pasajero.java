@@ -1,10 +1,14 @@
+import java.util.List;
+
 public class Pasajero {
 
     private int id;
-    private int prioridad;
+    private String tipo;
+    private int prioridad; // 1 = más urgente
 
-    public Pasajero(int id, int prioridad) {
+    public Pasajero(int id, String tipo, int prioridad) {
         this.id = id;
+        this.tipo = tipo;
         this.prioridad = prioridad;
     }
 
@@ -12,23 +16,17 @@ public class Pasajero {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getTipo() {
+        return tipo;
     }
 
     public int getPrioridad() {
         return prioridad;
     }
 
-    public void setPrioridad(int prioridad) {
-        this.prioridad = prioridad;
-    }
-
     @Override
     public String toString() {
-        return "Pasajero{" +
-                "id='" + id + '\'' +
-                ", prioridad='" + prioridad + '\'' +
-                '}';
+        return "P" + id + "(" + tipo + ", prio=" + prioridad + ")";
     }
 }
+
