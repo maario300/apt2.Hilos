@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.Semaphore;
 
 public class Main {
 
     public static void main(String[] args) {
+        Semaphore semaphore = new Semaphore(1);
 
         // Crear pasajeros
         List<Pasajero> pasajeros = new ArrayList<>();
@@ -48,7 +50,7 @@ public class Main {
         // lanzar hilos de rescate
         List<Thread> hilos = new ArrayList<>();
         for (Balsa b : balsas) {
-            Thread t = new Thread(new Rescate(b, barco));
+            Thread t = new Thread(new Rescate(b, barco,semaphore));
             hilos.add(t);
             t.start();
         }
